@@ -565,3 +565,9 @@ DEFAULTS["audio"] = Hyperparams(
 DEFAULTS["distributed"] = Hyperparams(
     bucket=128
 )
+
+ec_demo_prior = Hyperparams()   
+ec_demo_prior.update(prior_1b_lyrics)
+ec_demo_prior.restore_prior='/content/gdrive/MyDrive/Colab_Notebooks/juke/ec_demo_prior/checkpoint_latest.pth.tar'
+ec_demo_prior.level=2
+HPARAMS_REGISTRY['ec_demo_prior'] = ec_demo_prior
